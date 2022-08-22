@@ -2,10 +2,10 @@
 
 if [ "$TERM" = "linux" ]; then
 	printf %b '\e]P0EFF1F5' # set background color to "Base"
-	printf %b '\e]P8ACB0BE' # set bright black to "Surface2"
+	printf %b '\e]P86C6F85' # set bright black to "Subtext0"
 
 	printf %b '\e]P74C4F69' # set text color to "Text"
-	printf %b '\e]PF6C6F85' # set bright white to "Subtext0"
+	printf %b '\e]PFBCC0CC' # set bright white to "Surface1"
 
 	printf %b '\e]P1D20F39' # set red to "Red"
 	printf %b '\e]P9D20F39' # set bright red to "Red"
