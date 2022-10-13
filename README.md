@@ -34,11 +34,13 @@
 </details>
 
 ## Usage
+### Read before installing
+Installing multiple times will result in the first theme you installed overriding the others. To uninstall or install a new theme simply remove the first line of `/etc/issue`
 
 1. Clone this repo.
-2. Choose your flavour.
-3. Source *flavour*.sh in your `.bashrc`, `.zshrc` or whatever file your shell uses.
-4. Log out and log back in.
+2. Run `./build.sh`
+3. Run `./install.sh <theme>` (eg `./install mocha`)
+4. Restart your computer!
 
 ## 💝 Thanks to
 
