@@ -39,7 +39,7 @@ Installing multiple times will result in the first theme you installed overridin
 
 1. Clone this repo.
 2. Run `./build.sh`
-3. Run `./install.sh <theme>` (eg `./install mocha`)
+3. Run `./install.sh <theme>` (eg `./install.sh mocha`)
 4. Restart your computer!
 
 ## 💝 Thanks to
