@@ -34,17 +34,32 @@
 </details>
 
 ## Usage
-### Read before installing
-Installing multiple times will result in the first theme you installed overriding the others. To uninstall or install a new theme simply remove the first line of `/etc/issue`
 
 1. Clone this repo.
-2. Run `./build.sh`
-3. Run `./install.sh <theme>` (eg `./install.sh mocha`)
+2. Run `./generate.sh <theme>` (eg `./generate.sh mocha`)
+3. Copy the text it outputs and set it in your kernel options
 4. Restart your computer!
+
+### GRUB
+
+Edit `/etc/default/grub` and append to the `GRUB_CMDLINE_LINUX` string
+
+### systemd-boot
+
+Edit the boot entry located in `/boot/loader/entries/` and append to the line starting with `options`
+
+### Limine
+
+Edit `/boot/limine.cfg` and append to the `CMDLINE` line of the entry
+
+### Other
+
+For other bootloaders or for more information, [see here on ArchWiki](https://wiki.archlinux.org/title/Kernel_parameters)
 
 ## 💝 Thanks to
 
 - [Echo](https://github.com/CallMeEchoCodes)
+- [mekb](https://github.com/mekb-turtle)
 
 &nbsp;
 
