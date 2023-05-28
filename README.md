@@ -38,19 +38,24 @@
 1. Clone this repo.
 2. Run `./generate.sh <theme>` (eg `./generate.sh mocha`)
 3. Copy the text it outputs and set it in your kernel options
-4. Restart your computer!
+4. Restart your computer
 
 ### GRUB
 
-Edit `/etc/default/grub` and append to the `GRUB_CMDLINE_LINUX` string
+1. Edit `/etc/default/grub` and append to the `GRUB_CMDLINE_LINUX` string
+2. Run `sudo update-grub`
+    - If your system doesn't have that, instead run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 ### systemd-boot
 
-Edit the boot entry located in `/boot/loader/entries/` and append to the line starting with `options`
+1. Edit the boot entry located in `/boot/loader/entries/`
+2. Append to the `options` line
+3. Run `sudo bootctl update`
 
 ### Limine
 
-Edit `/boot/limine.cfg` and append to the `CMDLINE` line of the entry
+1. Edit `/boot/limine.cfg`
+2. Append to the boot entry's `CMDLINE` line
 
 ### Other
 
