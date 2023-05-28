@@ -1,28 +1,28 @@
-#!/usr/bin/env bash
-
-printf %b '\e]P0303446' # set background color to "Base"
-printf %b '\e]P8626880' # set bright black to "Surface2"
-
-printf %b '\e]P7C6D0F5' # set text color to "Text"
-printf %b '\e]PFA5ADCE' # set bright white to "Subtext0"
-
-printf %b '\e]P1E78284' # set red to "Red"
-printf %b '\e]P9E78284' # set bright red to "Red"
-
-printf %b '\e]P2A6D189' # set green to "Green"
-printf %b '\e]PAA6D189' # set bright green to "Green"
-
-printf %b '\e]P3E5C890' # set yellow to "Yellow"
-printf %b '\e]PBE5C890' # set bright yellow to "Yellow"
-
-printf %b '\e]P48CAAEE' # set blue to "Blue"
-printf %b '\e]PC8CAAEE' # set bright blue to "Blue"
-
-printf %b '\e]P5F4B8E4' # set magenta to "Pink"
-printf %b '\e]PDF4B8E4' # set bright magenta to "Pink"
-
-printf %b '\e]P681C8BE' # set cyan to "Teal"
-printf %b '\e]PE81C8BE' # set bright cyan to "Teal"
-
-clear
-
+#!/bin/bash
+rosewater=242,213,207
+flamingo=238,190,190
+pink=244,184,228
+mauve=202,158,230
+red=231,130,132
+maroon=234,153,156
+peach=239,159,118
+yellow=229,200,144
+green=166,209,137
+teal=129,200,190
+sky=153,209,219
+sapphire=133,193,220
+blue=140,170,238
+lavender=186,187,241
+text=198,208,245
+subtext1=181,191,226
+subtext0=165,173,206
+overlay2=148,156,187
+overlay1=131,139,167
+overlay0=115,121,148
+surface2=98,104,128
+surface1=81,87,109
+surface0=65,69,89
+base=48,52,70
+mantle=41,44,60
+crust=35,38,52
+colors=("$base" "$red" "$green" "$yellow" "$blue" "$pink" "$teal" "$subtext1" "$surface2" "$red" "$green" "$yellow" "$blue" "$pink" "$teal" "$subtext0")
