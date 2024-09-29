@@ -19,7 +19,7 @@ case "$subcommand" in
     exit
     ;;
   mocha | macchiato | latte | frappe)
-    . "${ScriptDir}/src/${subcommand}.sh" || exit 1
+    . "${ScriptDir}/themes/${subcommand}.sh" || exit 1
     default_red=()
     default_grn=()
     default_blu=()
