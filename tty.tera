@@ -1,35 +1,34 @@
 ---
 whiskers:
-    version: "2.0.0"
+    version: "2.2.0"
+    matrix:
+      - flavor
+    filename: "themes/{{ flavor.identifier }}.txt"
 ---
 
-{%- macro rgb_str(rgb) -%}{{rgb.rgb.r}},{{rgb.rgb.g}},{{rgb.rgb.b}}{%- endmacro rgb_str -%}
+{%- macro extract_component(cmp) -%}
+{%- set colors = [
+  base,
+  red,
+  green,
+  yellow,
+  blue,
+  pink,
+  teal,
+  if(cond=flavor.dark, t=subtext1, f=subtext0),
+  surface2,
+  red,
+  green,
+  yellow,
+  blue,
+  pink,
+  teal,
+  if(cond=flavor.dark, t=subtext0, f=text)
+] -%}
+{%- for color in colors -%}
+{{- color.rgb[cmp] -}}
+{%- if not loop.last %},{% endif -%}
+{%- endfor -%}
+{%- endmacro -%}
 
-#!/bin/bash
-rosewater={{ self::rgb_str(rgb=rosewater) }}
-flamingo={{ self::rgb_str(rgb=flamingo) }}
-pink={{ self::rgb_str(rgb=pink) }}
-mauve={{ self::rgb_str(rgb=mauve) }}
-red={{ self::rgb_str(rgb=red) }}
-maroon={{ self::rgb_str(rgb=maroon) }}
-peach={{ self::rgb_str(rgb=peach) }}
-yellow={{ self::rgb_str(rgb=yellow) }}
-green={{ self::rgb_str(rgb=green) }}
-teal={{ self::rgb_str(rgb=teal) }}
-sky={{ self::rgb_str(rgb=sky) }}
-sapphire={{ self::rgb_str(rgb=sapphire) }}
-blue={{ self::rgb_str(rgb=blue) }}
-lavender={{ self::rgb_str(rgb=lavender) }}
-text={{ self::rgb_str(rgb=text) }}
-subtext1={{ self::rgb_str(rgb=subtext1) }}
-subtext0={{ self::rgb_str(rgb=subtext0) }}
-overlay2={{ self::rgb_str(rgb=overlay2) }}
-overlay1={{ self::rgb_str(rgb=overlay1) }}
-overlay0={{ self::rgb_str(rgb=overlay0) }}
-surface2={{ self::rgb_str(rgb=surface2) }}
-surface1={{ self::rgb_str(rgb=surface1) }}
-surface0={{ self::rgb_str(rgb=surface0) }}
-base={{ self::rgb_str(rgb=base) }}
-mantle={{ self::rgb_str(rgb=mantle) }}
-crust={{ self::rgb_str(rgb=crust) }}
-colors=("$base" "$red" "$green" "$yellow" "$blue" "$pink" "$teal" "${{ if(cond=flavor.dark, t="subtext1", f="subtext0") }}" "$surface2" "$red" "$green" "$yellow" "$blue" "$pink" "$teal" "${{ if(cond=flavor.dark, t="subtext0", f="text") }}")
+vt.default_red={{ self::extract_component(cmp="r") }} vt.default_grn={{ self::extract_component(cmp="g") }} vt.default_blu={{ self::extract_component(cmp="b") }}

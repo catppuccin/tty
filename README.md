@@ -35,26 +35,24 @@
 
 ## Usage
 
-1. Clone this repo.
-2. Run `./generate.sh <theme>` (eg `./generate.sh mocha`)
-3. Copy the text outputted by the script and add it to your kernel options
-4. Restart your computer
+1. Copy the contents of your preferred flavor from [`themes/`](./themes/) and add it to your kernel options
+2. Restart your computer
 
 ### GRUB
 
-1. Edit `/etc/default/grub` and append the outputted kernel options to `GRUB_CMDLINE_LINUX` (eg. `GRUB_CMDLINE_LINUX="vt.default_red..."`)
+1. Edit `/etc/default/grub` and append the theme kernel options to `GRUB_CMDLINE_LINUX` (eg. `GRUB_CMDLINE_LINUX="vt.default_red..."`)
 2. Run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 ### systemd-boot
 
 1. Edit the boot entry located in `/boot/loader/entries/`
-2. Append the outputted kernel options to the `options` line
+2. Append the theme kernel options to the `options` line
 3. Run `sudo bootctl update`
 
 ### Limine
 
 1. Edit `/boot/limine.cfg`
-2. Append the outputted kernel options to the boot entry's `CMDLINE`
+2. Append the theme kernel options to the boot entry's `CMDLINE`
 
 ### Other
 
