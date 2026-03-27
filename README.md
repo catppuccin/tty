@@ -33,14 +33,16 @@
 <img src="assets/mocha.webp"/>
 </details>
 
-## Usage
+## TTY/fbcon Usage
 
-1. Copy the contents of your preferred flavor from [`themes/`](./themes/) and add it to your kernel options
+1. Copy the contents of your preferred flavor from [`themes/`](./themes/) and
+   add it to your kernel options
 2. Restart your computer
 
 ### GRUB
 
-1. Edit `/etc/default/grub` and append the theme kernel options to `GRUB_CMDLINE_LINUX` (eg. `GRUB_CMDLINE_LINUX="vt.default_red..."`)
+1. Edit `/etc/default/grub` and append the theme kernel options to
+   `GRUB_CMDLINE_LINUX` (eg. `GRUB_CMDLINE_LINUX="vt.default_red..."`)
 2. Run `sudo grub-mkconfig -o /boot/grub/grub.cfg`
 
 ### systemd-boot
@@ -56,12 +58,25 @@
 
 ### Other
 
-For other bootloaders or for more information, [see here on ArchWiki](https://wiki.archlinux.org/title/Kernel_parameters)
+For other bootloaders or for more information,
+[see here on ArchWiki](https://wiki.archlinux.org/title/Kernel_parameters)
+
+## KMSCON Usage
+
+1. Open/Create the file `/etc/kmscon/kmscon.conf` (there is an example provided
+   at `/etc/kmscon/kms.conf.example`).
+2. Copy the theme from `themes/kmscon/` for your chosen flavour.
+3. Go to the line starting `palette=` and change it to `palette=custom`.
+4. Paste the theme (from step 2) into `kmscon.conf` under the line
+   `palette=custom` (from step 3).
+5. Restart the existing session or generate a new KMSCON session, and the theme
+   should take effect.
 
 ## 💝 Thanks to
 
 - [Echo](https://github.com/CallMeEchoCodes)
 - [mekb](https://github.com/mekb-turtle)
+- [Toria](https://github.com/ninetailedtori)
 
 &nbsp;
 

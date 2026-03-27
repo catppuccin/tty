@@ -1,0 +1,16 @@
+---
+whiskers:
+    version: "^2.5.1"
+    matrix:
+      - flavor
+    filename: "../themes/tty/{{ flavor.identifier }}.txt"
+---
+
+{%- macro extract_component(cmp) -%}
+    {%- for _, c in flavor.ansi_colors -%}
+        {{- c.rgb[cmp] -}}
+        {%- if not loop.last %},{% endif -%}
+    {%- endfor -%}
+{%- endmacro -%}
+
+vt.default_red={{ self::extract_component(cmp="r") }} vt.default_grn={{ self::extract_component(cmp="g") }} vt.default_blu={{ self::extract_component(cmp="b") }}

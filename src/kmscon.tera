@@ -1,0 +1,30 @@
+---
+whiskers:
+    version: "^2.5.1"
+    matrix:
+      - flavor
+    filename: "../themes/kmscon/kmscon_{{ flavor.identifier }}.conf"
+---
+
+{%- macro rgb(col) -%}
+{{ col.rgb.r }},{{ col.rgb.g }},{{ col.rgb.b }}
+{%- endmacro rgb -%}
+
+palette-black={{ self::rgb(col=flavor.ansi_colors.black) }}
+palette-red={{ self::rgb(col=flavor.ansi_colors.red) }}
+palette-green={{ self::rgb(col=flavor.ansi_colors.green) }}
+palette-yellow={{ self::rgb(col=flavor.ansi_colors.yellow) }}
+palette-blue={{ self::rgb(col=flavor.ansi_colors.blue) }}
+palette-magenta={{ self::rgb(col=flavor.ansi_colors.magenta) }}
+palette-cyan={{ self::rgb(col=flavor.ansi_colors.cyan) }}
+palette-light-grey={{ self::rgb(col=flavor.ansi_colors.white) }}
+palette-dark-grey={{ self::rgb(col=flavor.ansi_colors.bright_black) }}
+palette-light-red={{ self::rgb(col=flavor.ansi_colors.bright_red) }}
+palette-light-green={{ self::rgb(col=flavor.ansi_colors.bright_green) }}
+palette-light-yellow={{ self::rgb(col=flavor.ansi_colors.bright_yellow) }}
+palette-light-blue={{ self::rgb(col=flavor.ansi_colors.bright_blue) }}
+palette-light-magenta={{ self::rgb(col=flavor.ansi_colors.bright_magenta) }}
+palette-light-cyan={{ self::rgb(col=flavor.ansi_colors.bright_cyan) }}
+palette-white={{ self::rgb(col=flavor.ansi_colors.bright_white) }}
+palette-foreground={{ self::rgb(col=text) }}
+palette-background={{ self::rgb(col=base) }}

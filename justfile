@@ -2,4 +2,5 @@ _default:
     @just --list
 
 build:
-  whiskers tty.tera
+  whiskers src/kmscon.tera
+  whiskers src/tty.tera
